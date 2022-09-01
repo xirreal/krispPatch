@@ -38,7 +38,7 @@ class Updater extends nativeUpdaterModule.Updater {
                 if(!existsSync(join(krispModuleDir, 'discord_krisp', 'patch'))) {
                     console.log('(krispPatch) Looks like the krisp binary has not been patched yet, doing that now!');
                     try {
-                        patch(join(krispModuleDir, 'discord_krisp', 'discord_krisp.node'), 0xAF5C, new Uint8Array([0x90, 0x90, 0x90, 0x90, 0x90, 0x90]));
+                        patch(join(krispModuleDir, 'discord_krisp', 'discord_krisp.node'), 0xABCD, new Uint8Array([0x00]));
                         writeFileSync(join(krispModuleDir, 'discord_krisp', 'patch'), ":)");
                         console.log('(krispPatch) Done :)');
                     }
